@@ -1,0 +1,42 @@
+origin is usually used as the name of the private fork-generated remote repo
+upstrean is usually used as the name of the public repo we forked
+we need to maually add the upstream remote using git remote add upstream [ssh url of the public repo]
+
+git clone: Creates a local copy of a remote.
+git remote -v: Lists a Git project’s remotes.
+git fetch: Fetches work from the remote into the local origin branch.
+git merge [branch_name]: merge the branch_name branch into the current branch. branch_name is giver and current branch is receiver (only receiver branch changes)
+git merge origin/[branch_name]: Merges origin/[branch_name] branch into your local branch.
+git pull:fetch + merge
+git rebase [branch_name]: rebase current branch on branch_name. 
+git push origin <branch_name>: Pushes the current branch to the origin('s corresponding branch).
+git push  <REMOTENAME> <BRANCHNAME> : push the local BRANCHNAME branch to REMOTENAME.
+
+
+git checkout [branch_name]:go to [branch_name] branch
+git branch [branch_name]:create [branch_name] branch
+git -d [branch_name]:delete branch
+
+
+merge conflict:
+The merge was successful because master had not changed since we made a commit on fencing. Git knew to simply update master with changes on fencing.
+What would happen if you made a commit on master before you merged the two branches? Furthermore, what if the commit you made on master altered 
+the same exact text you worked on in fencing? When you switch back to master and ask Git to merge the two branches, 
+Git doesn’t know which changes you want to keep. This is called a merge conflict.
+
+
+tutorial:https://www.youtube.com/watch?v=8A4TsoXJOs8
+pull request:
+after pushing from local to the fork-generated repository(origin) in your own github account, can make pull requests on github
+by clicking "contribute" in the repository main page to start a pull request to the forked public repository. The administrators will come and authorize/comment on the changes.
+
+
+
+add a fetch & push stream of a public remote repo: git remote add upstream [ssh url of the public repo]
+
+directly fetch updates from the remote repo into origin of the local repo(not the fork-generated one): git fetch upstram
+
+update branch in fork-generated repo with the fetched information stored in local origin: git push origin master 
+interpretation: from  local master branch   push to    origin master branch
+
+directly pushing from local to the public repository: git push upstram master 
